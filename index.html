@@ -194,6 +194,56 @@
 
   @media(max-width:820px){.stats,.cards,.steps,.mstats,.flow{grid-template-columns:1fr 1fr}.compare,.split{grid-template-columns:1fr}.foot{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.stats,.cards,.steps,.mstats,.flow{grid-template-columns:1fr}}
+
+  /* ---------- OBSERVATION GALLERY ---------- */
+  .obs-sub{color:var(--mut-light);font-size:14px;font-weight:600;margin:42px 0 14px}
+  .taxa-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .taxa{background:#fff;border:1px solid #e7e7ec;border-radius:16px;padding:14px;display:block;transition:transform .15s,box-shadow .15s}
+  .taxa:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.09)}
+  .taxa .ph{aspect-ratio:1;border-radius:10px;overflow:hidden;background:#f1f1f4}
+  .taxa .ph img{width:100%;height:100%;object-fit:cover}
+  .taxa .tn{font-style:italic;font-weight:600;color:var(--blue);margin-top:12px;font-size:15px;letter-spacing:-.01em}
+  .taxa .tc{color:#2f9e63;font-size:13px;margin-top:2px;font-weight:600}
+  .obs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
+  .obs{background:#fff;border:1px solid #e7e7ec;border-radius:16px;overflow:hidden;display:block;transition:transform .15s,box-shadow .15s}
+  .obs:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.09)}
+  .obs-img{position:relative;aspect-ratio:1;background:#f1f1f4}
+  .obs-img img{width:100%;height:100%;object-fit:cover}
+  .obs-badge{position:absolute;left:10px;top:10px;background:rgba(255,255,255,.94);color:#2f9e63;font-size:11px;font-weight:600;border-radius:9999px;padding:3px 10px;border:1px solid #d7ead9}
+  .obs-body{padding:12px 14px 14px}
+  .obs-name{font-style:italic;font-weight:600;font-size:15px;color:var(--ink-light);letter-spacing:-.01em}
+  .obs-meta{color:var(--mut-light);font-size:12.5px;margin-top:2px}
+  .obs-conf{display:flex;align-items:center;gap:8px;margin-top:11px}
+  .obs-conf .bar{flex:1;height:5px;border-radius:3px;background:#e7e7ec;overflow:hidden}
+  .obs-conf .bar i{display:block;height:100%;background:var(--blue)}
+  .obs-conf .pct{font-size:12px;color:var(--mut-light);font-weight:600}
+  .obs-hint{color:var(--blue);font-weight:600;font-size:15px;margin-top:22px;display:inline-block}
+
+  /* ---------- GROUND-TRUTH SATELLITE MAP ---------- */
+  .sat{margin-top:36px}
+  .sat-toggles{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  .tg{border:1px solid var(--line-soft);border-radius:9999px;padding:7px 14px;font-size:13px;color:var(--mut);display:inline-flex;align-items:center;gap:8px}
+  .tg::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--dim)}
+  .tg.on{color:var(--ink);border-color:#31597e;background:rgba(41,151,255,.10)}
+  .tg.on::before{background:var(--blue)}
+  .sat-map{position:relative;border:1px solid var(--line-soft);border-radius:16px;overflow:hidden;background:#08151f}
+  .sat-svg{width:100%;height:auto;display:block}
+  .pm{position:absolute;left:60%;top:60%;transform:translate(-50%,-50%);width:15px;height:15px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(41,151,255,.3);z-index:2}
+  .pm::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--blue);animation:pmpulse 2.2s infinite}
+  @keyframes pmpulse{0%{transform:scale(.5);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+  .sat-callout{position:absolute;left:64%;top:19%;width:248px;background:rgba(16,20,24,.92);border:1px solid var(--line-soft);border-radius:12px;padding:15px 16px;z-index:3;backdrop-filter:blur(5px)}
+  .sat-callout .ce{color:var(--blue);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+  .sat-callout h4{margin:7px 0 2px;font-size:16px;font-style:italic}
+  .sat-callout .loc{color:var(--dim);font-size:13px}
+  .sat-callout .big{font-size:22px;font-weight:600;margin-top:10px;letter-spacing:-.02em}
+  .sat-callout .big span{font-size:13px;color:var(--dim);font-weight:400}
+  .sat-callout .match{color:#5cc08a;font-size:13px;font-weight:600;margin-top:10px}
+  .sat-legend{position:absolute;left:16px;bottom:14px;background:rgba(8,21,31,.72);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:9px 11px;font-size:11px;color:var(--mut);z-index:2}
+  .sat-legend .scale{height:8px;width:150px;border-radius:4px;background:linear-gradient(90deg,#1c5f8c,#3fb56b,#e6c93c,#e6733c);margin-top:6px}
+  .sat-legend .lab{display:flex;justify-content:space-between;margin-top:3px;color:var(--dim);font-size:10px}
+  @media(max-width:820px){.taxa-cards,.obs-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:680px){.sat-callout{position:static;width:auto;margin:12px;backdrop-filter:none}}
+
   /* reveal */
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
@@ -209,6 +259,8 @@
       <a href="#why">Why it matters</a>
       <a href="#vision">The vision</a>
       <a href="#data">Early warning</a>
+      <a href="#explore">Explore</a>
+      <a href="#satellite">Ground truth</a>
       <a href="#compare">Compare</a>
       <a href="#how">How it works</a>
       <a href="#instrument">PlanktoScope</a>
@@ -317,6 +369,99 @@
     </div>
 
     <p class="disc"><b>Illustrative preview.</b> These are demonstration alerts built from synthetic sample data to show how the system will work. Not live measurements or official advisories.</p>
+  </div>
+</section>
+
+<!-- ================= EXPLORE / OBSERVATIONS ================= -->
+<section class="band light" id="explore">
+  <div class="wrap reveal">
+    <p class="eyebrow">Explore</p>
+    <h2>Latest from the coast.</h2>
+    <p class="lead" style="max-width:42rem;margin-top:12px">Every observation is an imaged plankton cell, geolocated by the PlanktoScope that captured it and confirmed by experts.</p>
+
+    <div class="obs-sub">Monitored HAB taxa · live status</div>
+    <div class="taxa-cards">
+      <a class="taxa" href="#satellite"><div class="ph"><img src="cell_pennate.jpg" alt="Pseudo-nitzschia"></div><div class="tn">Pseudo-nitzschia</div><div class="tc">detected · 72</div></a>
+      <a class="taxa" href="#satellite"><div class="ph"><img src="cell_akashiwo.jpg" alt="Akashiwo sanguinea"></div><div class="tn">Akashiwo sanguinea</div><div class="tc">detected · 24</div></a>
+      <a class="taxa" href="#satellite"><div class="ph"><img src="cell_dinophysis.jpg" alt="Dinophysis"></div><div class="tn">Dinophysis</div><div class="tc">detected · 116</div></a>
+      <a class="taxa" href="#satellite"><div class="ph"><img src="cell_radiolarian.jpg" alt="Alexandrium"></div><div class="tn">Alexandrium</div><div class="tc">detected · 18</div></a>
+    </div>
+
+    <div class="filterchips" style="margin-top:28px">
+      <span class="fchip on">All taxa 12</span>
+      <span class="fchip">Pseudo-nitzschia 4</span>
+      <span class="fchip">Dinophysis 4</span>
+      <span class="fchip">Akashiwo 4</span>
+    </div>
+    <div class="filterchips" style="margin-top:10px">
+      <span class="fchip on">All sources</span><span class="fchip">Benchmark nodes</span><span class="fchip">Community</span>
+    </div>
+
+    <div class="obs-grid">
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_pennate.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Pseudo-nitzschia</div><div class="obs-meta">Pier 9 SF · Benchmark node</div><div class="obs-conf"><span class="bar"><i style="width:86%"></i></span><span class="pct">86%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_dinophysis.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Dinophysis</div><div class="obs-meta">Monterey Bay · Community</div><div class="obs-conf"><span class="bar"><i style="width:82%"></i></span><span class="pct">82%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_wheel.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Actinoptychus</div><div class="obs-meta">Bodega Head · Benchmark node</div><div class="obs-conf"><span class="bar"><i style="width:91%"></i></span><span class="pct">91%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_akashiwo.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Akashiwo sanguinea</div><div class="obs-meta">SF Bay · Community</div><div class="obs-conf"><span class="bar"><i style="width:78%"></i></span><span class="pct">78%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_copepod.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Tintinnid</div><div class="obs-meta">Pillar Point · Community</div><div class="obs-conf"><span class="bar"><i style="width:88%"></i></span><span class="pct">88%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_star.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Radiolaria</div><div class="obs-meta">Trinidad Head · Benchmark node</div><div class="obs-conf"><span class="bar"><i style="width:84%"></i></span><span class="pct">84%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_colony.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Chaetoceros</div><div class="obs-meta">Half Moon Bay · Community</div><div class="obs-conf"><span class="bar"><i style="width:80%"></i></span><span class="pct">80%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_radiolarian.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Alexandrium</div><div class="obs-meta">SF Bay · Benchmark node</div><div class="obs-conf"><span class="bar"><i style="width:83%"></i></span><span class="pct">83%</span></div></div></a>
+    </div>
+    <a class="obs-hint" href="#satellite">Click any cell to see where it was captured ›</a>
+    <p class="disc" style="color:var(--mut-light);margin-top:18px">Illustrative preview. The imaged cells are real; counts, locations, and validation states are sample data.</p>
+  </div>
+</section>
+
+<!-- ================= GROUND TRUTH / SATELLITE ================= -->
+<section class="band" id="satellite">
+  <div class="wrap reveal">
+    <p class="eyebrow">Ground truth</p>
+    <h2>We check the satellites against the water.</h2>
+    <p class="lead" style="max-width:47rem;margin-top:12px">Every PlanktoScope sample is geolocated and laid over CenCOOS satellite layers, so a real cell count can confirm, or correct, what the satellite sees from orbit.</p>
+
+    <div class="sat">
+      <div class="sat-toggles">
+        <span class="tg on">Chlorophyll-a · CenCOOS</span>
+        <span class="tg">Sea-surface temp</span>
+        <span class="tg on">PlanktoScope samples</span>
+      </div>
+      <div class="sat-map">
+        <svg viewBox="0 0 920 460" class="sat-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative CenCOOS chlorophyll overlay with PlanktoScope sample points along the California coast">
+          <defs>
+            <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d2233"/><stop offset="1" stop-color="#081420"/></linearGradient>
+            <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="20"/></filter>
+          </defs>
+          <rect width="920" height="460" fill="url(#ocean)"/>
+          <g stroke="#12354a" stroke-width="1" opacity="0.5">
+            <line x1="0" y1="115" x2="920" y2="115"/><line x1="0" y1="230" x2="920" y2="230"/><line x1="0" y1="345" x2="920" y2="345"/>
+            <line x1="230" y1="0" x2="230" y2="460"/><line x1="460" y1="0" x2="460" y2="460"/><line x1="690" y1="0" x2="690" y2="460"/>
+          </g>
+          <g filter="url(#soft)" opacity="0.72">
+            <ellipse cx="470" cy="300" rx="165" ry="135" fill="#3fb56b"/>
+            <ellipse cx="520" cy="405" rx="135" ry="80" fill="#3fb56b"/>
+            <ellipse cx="528" cy="210" rx="120" ry="88" fill="#e6c93c"/>
+            <ellipse cx="566" cy="150" rx="74" ry="54" fill="#e6733c"/>
+            <ellipse cx="548" cy="275" rx="60" ry="46" fill="#e6c93c"/>
+          </g>
+          <path d="M 920,0 L 655,0 C 628,52 600,96 612,156 C 623,212 556,240 572,306 C 585,360 520,384 552,436 C 566,458 616,458 660,460 L 920,460 Z" fill="#131a20" stroke="#28323b" stroke-width="1.5"/>
+          <text x="708" y="242" fill="#3b4650" font-size="20" font-family="sans-serif" font-weight="600" letter-spacing="1">CALIFORNIA</text>
+          <g fill="#bfe0ff" stroke="#0a1a26" stroke-width="1">
+            <circle cx="590" cy="72" r="4"/><circle cx="602" cy="118" r="4"/><circle cx="574" cy="205" r="4"/><circle cx="546" cy="352" r="4"/><circle cx="560" cy="416" r="4"/><circle cx="600" cy="300" r="4"/>
+          </g>
+          <text x="20" y="34" fill="#7f8b95" font-size="13" font-family="sans-serif">CenCOOS · chlorophyll-a · demo layer</text>
+        </svg>
+        <div class="pm" title="PlanktoScope · Pier 9 SF"></div>
+        <div class="sat-callout">
+          <div class="ce">PlanktoScope sample</div>
+          <h4>Pier 9 SF</h4>
+          <div class="loc">SF Bay · benchmark node</div>
+          <div class="big">41k <span>cells L⁻¹ · Pseudo-nitzschia</span></div>
+          <div class="match">✓ confirms the CenCOOS bloom signal</div>
+        </div>
+        <div class="sat-legend">chlorophyll-a (mg m⁻³)<div class="scale"></div><div class="lab"><span>low</span><span>high</span></div></div>
+      </div>
+    </div>
+    <p class="disc">Illustrative overlay. The satellite layer and sample points are demonstrative; the workflow shown, a geolocated sample matched to the nearest satellite pixel, is what the platform does.</p>
   </div>
 </section>
 
