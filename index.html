@@ -501,24 +501,11 @@
 </footer>
 
 <!-- ================= SCRIPTS ================= -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js"></script>
 <script>
-  // Hero video: prefer local hero.mp4 (if present), else stream the plankton movie via HLS.
+  // Self-hosted hero video (hero.mp4) — nudge autoplay (muted, inline)
   (function(){
     var v = document.getElementById('heroVideo');
-    var hls = "https://video.squarespace-cdn.com/content/v1/678ea80918deef75669efa00/1f783f3e-2e92-455d-9729-052df38a7c19/playlist.m3u8";
-    var localOk = false;
-    // if a local hero.mp4 loads, use it; otherwise fall back to the HLS stream
-    v.addEventListener('loadeddata', function(){ localOk = true; }, {once:true});
-    setTimeout(function(){
-      if (localOk) return;                 // local file worked
-      if (v.canPlayType('application/vnd.apple.mpegurl')) { v.src = hls; v.play&&v.play(); return; } // Safari
-      if (window.Hls && Hls.isSupported()) {
-        var h = new Hls({autoStartLoad:true});
-        h.on(Hls.Events.ERROR,function(){/* silent — gradient fallback stays */});
-        h.loadSource(hls); h.attachMedia(v);
-      }
-    }, 900);
+    if (v) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
   })();
 
   // Scroll reveal
