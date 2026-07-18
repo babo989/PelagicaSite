@@ -197,7 +197,7 @@
 
   /* ---------- OBSERVATION GALLERY ---------- */
   .obs-sub{color:var(--mut-light);font-size:14px;font-weight:600;margin:42px 0 14px}
-  .taxa-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .taxa-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .taxa{background:#fff;border:1px solid #e7e7ec;border-radius:16px;padding:14px;display:block;transition:transform .15s,box-shadow .15s}
   .taxa:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.09)}
   .taxa .ph{aspect-ratio:1;border-radius:10px;overflow:hidden;background:#f1f1f4}
@@ -388,33 +388,32 @@
     <h2>Latest from the coast.</h2>
     <p class="lead" style="max-width:42rem;margin-top:12px">Every observation is an imaged plankton cell, geolocated by the PlanktoScope that captured it and confirmed by experts.</p>
 
-    <div class="obs-sub">Recently imaged plankton · group ID</div>
+    <div class="obs-sub">Monitored HAB taxa · live status</div>
     <div class="taxa-cards">
-      <a class="taxa" href="#satellite"><div class="ph"><img src="cell_pennate.jpg" alt="Pennate diatom"></div><div class="tn">Pennate diatom</div><div class="tc">detected · 72</div></a>
-      <a class="taxa" href="#satellite"><div class="ph"><img src="cell_akashiwo.jpg" alt="Dinoflagellate"></div><div class="tn">Dinoflagellate</div><div class="tc">detected · 24</div></a>
-      <a class="taxa" href="#satellite"><div class="ph"><img src="cell_dinophysis.jpg" alt="Tintinnid"></div><div class="tn">Tintinnid</div><div class="tc">detected · 116</div></a>
-      <a class="taxa" href="#satellite"><div class="ph"><img src="cell_radiolarian.jpg" alt="Radiolarian"></div><div class="tn">Radiolarian</div><div class="tc">detected · 18</div></a>
+      <a class="taxa" href="#satellite"><div class="ph"><img src="cell_psn_4.jpg" alt="Pseudo-nitzschia"></div><div class="tn">Pseudo-nitzschia</div><div class="tc">detected · 72</div></a>
+      <a class="taxa" href="#satellite"><div class="ph"><img src="cell_aka_2.jpg" alt="Akashiwo sanguinea"></div><div class="tn">Akashiwo sanguinea</div><div class="tc">detected · 24</div></a>
+      <a class="taxa" href="#satellite"><div class="ph"><img src="cell_din_3.jpg" alt="Dinophysis"></div><div class="tn">Dinophysis</div><div class="tc">detected · 116</div></a>
     </div>
 
     <div class="filterchips" style="margin-top:28px">
-      <span class="fchip on">All taxa 12</span>
-      <span class="fchip">Pennate diatom 4</span>
-      <span class="fchip">Tintinnid 4</span>
-      <span class="fchip">Dinoflagellates 3</span>
+      <span class="fchip on">All taxa 29</span>
+      <span class="fchip">Pseudo-nitzschia 10</span>
+      <span class="fchip">Akashiwo sanguinea 9</span>
+      <span class="fchip">Dinophysis 10</span>
     </div>
     <div class="filterchips" style="margin-top:10px">
       <span class="fchip on">All sources</span><span class="fchip">Benchmark nodes</span><span class="fchip">Community</span>
     </div>
 
     <div class="obs-grid">
-      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_pennate.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Pennate diatom</div><div class="obs-meta">Pier 9 SF · Benchmark node</div><div class="obs-conf"><span class="bar"><i style="width:86%"></i></span><span class="pct">86%</span></div></div></a>
-      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_dinophysis.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Tintinnid</div><div class="obs-meta">Monterey Bay · Community</div><div class="obs-conf"><span class="bar"><i style="width:82%"></i></span><span class="pct">82%</span></div></div></a>
-      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_wheel.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Centric diatom</div><div class="obs-meta">Bodega Head · Benchmark node</div><div class="obs-conf"><span class="bar"><i style="width:91%"></i></span><span class="pct">91%</span></div></div></a>
-      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_akashiwo.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Dinoflagellate</div><div class="obs-meta">SF Bay · Community</div><div class="obs-conf"><span class="bar"><i style="width:78%"></i></span><span class="pct">78%</span></div></div></a>
-      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_copepod.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Ciliate</div><div class="obs-meta">Pillar Point · Community</div><div class="obs-conf"><span class="bar"><i style="width:88%"></i></span><span class="pct">88%</span></div></div></a>
-      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_star.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Radiolarian</div><div class="obs-meta">Trinidad Head · Benchmark node</div><div class="obs-conf"><span class="bar"><i style="width:84%"></i></span><span class="pct">84%</span></div></div></a>
-      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_colony.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Colonial diatom</div><div class="obs-meta">Half Moon Bay · Community</div><div class="obs-conf"><span class="bar"><i style="width:80%"></i></span><span class="pct">80%</span></div></div></a>
-      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_radiolarian.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Radiolarian</div><div class="obs-meta">SF Bay · Benchmark node</div><div class="obs-conf"><span class="bar"><i style="width:83%"></i></span><span class="pct">83%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_psn_3.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Pseudo-nitzschia</div><div class="obs-meta">Pier 9 SF · Benchmark node</div><div class="obs-conf"><span class="bar"><i style="width:86%"></i></span><span class="pct">86%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_din_1.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Dinophysis</div><div class="obs-meta">Monterey Bay · Community</div><div class="obs-conf"><span class="bar"><i style="width:92%"></i></span><span class="pct">92%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_aka_1.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Akashiwo sanguinea</div><div class="obs-meta">SF Bay · Community</div><div class="obs-conf"><span class="bar"><i style="width:78%"></i></span><span class="pct">78%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_psn_6.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Pseudo-nitzschia</div><div class="obs-meta">Bodega Head · Benchmark node</div><div class="obs-conf"><span class="bar"><i style="width:88%"></i></span><span class="pct">88%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_din_8.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Dinophysis</div><div class="obs-meta">Pillar Point · Community</div><div class="obs-conf"><span class="bar"><i style="width:84%"></i></span><span class="pct">84%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_aka_5.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Akashiwo sanguinea</div><div class="obs-meta">Half Moon Bay · Community</div><div class="obs-conf"><span class="bar"><i style="width:80%"></i></span><span class="pct">80%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_psn_9.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Pseudo-nitzschia</div><div class="obs-meta">Trinidad Head · Benchmark node</div><div class="obs-conf"><span class="bar"><i style="width:91%"></i></span><span class="pct">91%</span></div></div></a>
+      <a class="obs" href="#satellite"><div class="obs-img"><img src="cell_din_10.jpg" alt=""><span class="obs-badge">✓ validated</span></div><div class="obs-body"><div class="obs-name">Dinophysis</div><div class="obs-meta">SF Bay · Benchmark node</div><div class="obs-conf"><span class="bar"><i style="width:83%"></i></span><span class="pct">83%</span></div></div></a>
     </div>
     <a class="obs-hint" href="#satellite">Click any cell to see where it was captured ›</a>
     <p class="disc" style="color:var(--mut-light);margin-top:18px">Illustrative preview. The imaged cells are real; counts, locations, and validation states are sample data.</p>
@@ -425,7 +424,7 @@
 <section class="band" id="satellite">
   <div class="wrap reveal">
     <p class="eyebrow">Ground truth</p>
-    <h2>We check the satellites against the water.</h2>
+    <h2>Satellites see the bloom.<br>We see what's in it.</h2>
     <p class="lead" style="max-width:48rem;margin-top:12px">Every PlanktoScope sample sits beside live satellite chlorophyll (NASA GIBS) and CeNCOOS stations, so a real cell count can confirm, or correct, what the satellite sees from orbit. The map loads external data only when you scroll to it.</p>
 
     <div class="chlmap-wrap">
@@ -667,7 +666,7 @@
     cen.addTo(map);
     var you=L.layerGroup();
     var ym=L.circleMarker([37.8005,-122.398],{radius:8,color:'#ffffff',weight:2,fillColor:'#2997ff',fillOpacity:1}).addTo(you);
-    ym.bindPopup('<b>Pier 9 SF</b><br>Pennate diatom · 41k cells L⁻¹<br>✓ matches the CeNCOOS bloom signal');
+    ym.bindPopup('<b>Pier 9 SF</b><br>Pseudo-nitzschia · 41k cells L⁻¹<br>✓ matches the CeNCOOS bloom signal');
     you.addTo(map);
     function bind(id,layer){var c=document.getElementById(id);if(c)c.addEventListener('change',function(){c.checked?map.addLayer(layer):map.removeLayer(layer);});}
     bind('lg-chl',chl);bind('lg-cen',cen);bind('lg-net',net);bind('lg-you',you);
