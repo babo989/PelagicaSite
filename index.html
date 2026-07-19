@@ -157,6 +157,10 @@
 
   /* ---------- FOOTER ---------- */
   footer{background:var(--bg-2);border-top:1px solid var(--line);padding:64px 0 40px}
+  .foot-logo-dark{display:none}
+  [data-theme="light"] .foot-logo-light{display:none}
+  [data-theme="light"] .foot-logo-dark{display:block}
+  [data-theme="light"] .foot a:hover{color:var(--ink)}
   .foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
   .foot h4{margin:0 0 14px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);font-weight:600}
   .foot a{display:block;color:var(--mut);font-size:15px;margin:9px 0}
@@ -625,7 +629,7 @@
   <div class="wrap">
     <div class="foot">
       <div>
-        <div class="brand" style="margin-bottom:14px"><img class="logo foot-logo" src="pelagica-logo.png" alt="Pelagica" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brandtext" style="display:none">Pelagica</span></div>
+        <div class="brand" style="margin-bottom:14px"><img class="logo foot-logo foot-logo-light" src="pelagica-logo.png" alt="Pelagica"><img class="logo foot-logo foot-logo-dark" src="pelagica-logo-dark.png" alt="Pelagica"></div>
         <p class="about">Building a living early warning system for the ocean, one drop at a time.</p>
       </div>
       <div>
